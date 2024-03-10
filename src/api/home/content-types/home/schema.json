@@ -27,12 +27,12 @@
     },
     "Services": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "components.services"
     },
     "Realisations": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "components.realisations"
     }
   }
