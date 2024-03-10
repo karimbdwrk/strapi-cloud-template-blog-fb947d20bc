@@ -23,6 +23,14 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "index": {
+      "type": "boolean",
+      "default": false
+    },
+    "follow": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
