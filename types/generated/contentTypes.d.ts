@@ -979,12 +979,17 @@ export interface ApiHomeHome extends Schema.SingleType {
     singularName: 'home';
     pluralName: 'homes';
     displayName: 'Home';
+    description: '';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
     title: Attribute.String;
+    SEO: Attribute.Component<'shared.seo'>;
+    Hero: Attribute.Component<'sections.hero'>;
+    Services: Attribute.Component<'components.services'>;
+    Realisations: Attribute.Component<'components.realisations'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &

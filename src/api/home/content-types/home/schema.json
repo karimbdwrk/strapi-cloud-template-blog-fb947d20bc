@@ -4,7 +4,8 @@
   "info": {
     "singularName": "home",
     "pluralName": "homes",
-    "displayName": "Home"
+    "displayName": "Home",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -13,6 +14,26 @@
   "attributes": {
     "title": {
       "type": "string"
+    },
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "Hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.hero"
+    },
+    "Services": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.services"
+    },
+    "Realisations": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.realisations"
     }
   }
 }
