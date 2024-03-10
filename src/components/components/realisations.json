@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_components_realisations",
+  "info": {
+    "displayName": "Realisations",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
