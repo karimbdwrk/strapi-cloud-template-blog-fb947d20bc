@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_components_quotes",
+  "info": {
+    "displayName": "Quote",
+    "icon": "quote"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "signature": {
+      "type": "string"
+    }
+  }
+}

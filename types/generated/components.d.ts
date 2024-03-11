@@ -1,5 +1,18 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ComponentsQuote extends Schema.Component {
+  collectionName: 'components_components_quotes';
+  info: {
+    displayName: 'Quote';
+    icon: 'quote';
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.RichText;
+    signature: Attribute.String;
+  };
+}
+
 export interface ComponentsRealisations extends Schema.Component {
   collectionName: 'components_components_realisations';
   info: {
@@ -123,6 +136,7 @@ export interface SharedSlider extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'components.quote': ComponentsQuote;
       'components.realisations': ComponentsRealisations;
       'components.services': ComponentsServices;
       'components.social-link': ComponentsSocialLink;

@@ -990,6 +990,7 @@ export interface ApiHomeHome extends Schema.SingleType {
     Hero: Attribute.Component<'sections.hero'>;
     Services: Attribute.Component<'components.services', true>;
     Realisations: Attribute.Component<'components.realisations', true>;
+    Quotes: Attribute.Component<'components.quote', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
@@ -1031,38 +1032,6 @@ export interface ApiMessageMessage extends Schema.CollectionType {
   };
 }
 
-export interface ApiQuoteQuote extends Schema.CollectionType {
-  collectionName: 'quotes';
-  info: {
-    singularName: 'quote';
-    pluralName: 'quotes';
-    displayName: 'Quote';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    message: Attribute.RichText;
-    signature: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::quote.quote',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::quote.quote',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1088,7 +1057,6 @@ declare module '@strapi/types' {
       'api::global.global': ApiGlobalGlobal;
       'api::home.home': ApiHomeHome;
       'api::message.message': ApiMessageMessage;
-      'api::quote.quote': ApiQuoteQuote;
     }
   }
 }
