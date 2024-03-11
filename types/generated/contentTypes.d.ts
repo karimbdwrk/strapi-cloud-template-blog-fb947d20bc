@@ -1062,6 +1062,58 @@ export interface ApiMessageMessage extends Schema.CollectionType {
   };
 }
 
+export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
+  collectionName: 'privacy_policies';
+  info: {
+    singularName: 'privacy-policy';
+    pluralName: 'privacy-policies';
+    displayName: 'PrivacyPolicy';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::privacy-policy.privacy-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::privacy-policy.privacy-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRgpdRgpd extends Schema.SingleType {
+  collectionName: 'rgpds';
+  info: {
+    singularName: 'rgpd';
+    pluralName: 'rgpds';
+    displayName: 'RGPD';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::rgpd.rgpd', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::rgpd.rgpd', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1088,6 +1140,8 @@ declare module '@strapi/types' {
       'api::home.home': ApiHomeHome;
       'api::legal.legal': ApiLegalLegal;
       'api::message.message': ApiMessageMessage;
+      'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
+      'api::rgpd.rgpd': ApiRgpdRgpd;
     }
   }
 }

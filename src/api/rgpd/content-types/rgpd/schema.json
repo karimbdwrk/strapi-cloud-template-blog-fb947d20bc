@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "rgpds",
+  "info": {
+    "singularName": "rgpd",
+    "pluralName": "rgpds",
+    "displayName": "RGPD"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}
